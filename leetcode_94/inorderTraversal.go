@@ -2,6 +2,7 @@ package leetcode_94
 
 import "leetcode/utils"
 
+// InorderTraversal 中序遍历
 func InorderTraversal(root *utils.TreeNode) (res []int) {
 	var inorder func(root *utils.TreeNode)
 	inorder = func(root *utils.TreeNode) {

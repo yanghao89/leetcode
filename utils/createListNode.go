@@ -22,22 +22,19 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-var (
-	i = int(-1)
-)
+func CreateTree(arr []int) *TreeNode {
+	return create(arr, 0, len(arr)-1)
+}
 
-func BuildTree(arr []int) *TreeNode {
-	i += 1
-	if i >= len(arr) {
+func create(arr []int, L, R int) *TreeNode {
+	if L > R {
 		return nil
 	}
-	t := new(TreeNode)
-	if arr[i] != 0 {
-		t.Val = arr[i]
-		t.Left = BuildTree(arr)
-		t.Right = BuildTree(arr)
-	} else {
-		return nil
-	}
-	return t
+	mid := L + (R-L)>>1
+	root := &TreeNode{Val: arr[mid]}
+	//右边向左一位
+	root.Left = create(arr, L, mid-1)
+	//左边想向后一位
+	root.Right = create(arr, mid+1, R)
+	return root
 }
