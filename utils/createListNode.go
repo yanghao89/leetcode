@@ -6,14 +6,14 @@ type ListNode struct {
 }
 
 func CreateListNode(arr []int) *ListNode {
-	node := &ListNode{Val: 0}
+	node := &ListNode{Val: arr[0]}
 	tmp := node
-	for i := 0; i < len(arr); i++ {
+	for i := 0; i < len(arr[1:])+1; i++ {
 		ne := &ListNode{Val: arr[i]}
 		tmp.Next = ne
 		tmp = ne
 	}
-	return node.Next
+	return node
 }
 
 type TreeNode struct {
