@@ -29,17 +29,6 @@ type ListNode struct {
 	Next *ListNode
 }
 
-func CreateListNode(arr []int) *ListNode {
-	node := &ListNode{Val: 0}
-	tmp := node
-	for i := 0; i < len(arr); i++ {
-		ne := &ListNode{Val: arr[i]}
-		tmp.Next = ne
-		tmp = ne
-	}
-	return node.Next
-}
-
 func Delete(arr []int) []int {
 	news, n := []int{arr[0]}, 1
 	for i := 0; i < len(arr); i++ {
