@@ -1,4 +1,4 @@
-package leetcdoe_offer_24
+package leetcode_offer_24
 
 import "leetcode/utils"
 

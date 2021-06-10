@@ -7,7 +7,7 @@ import (
 )
 
 func TestIsSameTree(t *testing.T) {
-	node1 := utils.BuildTree([]int{1, 2, 3})
+	node1 := utils.CreateTree([]int{1, 2, 3})
 	node2 := node1
 	fmt.Println(IsSameTree(node1, node2))
 }

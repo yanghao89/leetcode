@@ -12,3 +12,14 @@ func InvertTree(root *utils.TreeNode) *utils.TreeNode {
 	root.Right = Left
 	return root
 }
+
+func dfs(root *utils.TreeNode) *utils.TreeNode {
+	if root == nil {
+		return nil
+	}
+	L := dfs(root.Left)
+	R := dfs(root.Right)
+	root.Left = R
+	root.Right = L
+	return root
+}
