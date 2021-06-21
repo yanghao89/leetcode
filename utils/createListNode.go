@@ -5,6 +5,11 @@ type ListNode struct {
 	Next *ListNode
 }
 
+type Node struct {
+	Val      int
+	Children []*Node
+}
+
 func CreateListNode(arr []int) *ListNode {
 	node := &ListNode{Val: arr[0]}
 	tmp := node
@@ -22,6 +27,12 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+type TreeStrNode struct {
+	Val   string
+	Left  *TreeStrNode
+	Right *TreeStrNode
+}
+
 func CreateTree(arr []int) *TreeNode {
 	return create(arr, 0, len(arr)-1)
 }
@@ -37,4 +48,19 @@ func create(arr []int, L, R int) *TreeNode {
 	//左边想向后一位
 	root.Right = create(arr, mid+1, R)
 	return root
+}
+
+func createStr(arr []string, L, R int) *TreeStrNode {
+	if L > R {
+		return nil
+	}
+	mid := L + (R-L)>>1
+	root := &TreeStrNode{Val: arr[mid]}
+	root.Left = createStr(arr, L, mid-1)
+	root.Right = createStr(arr, mid+1, R)
+	return root
+}
+
+func CreateTreeStr(arr []string) *TreeStrNode {
+	return createStr(arr, 0, len(arr)-1)
 }
