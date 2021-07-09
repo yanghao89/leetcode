@@ -1,7 +1,6 @@
 package hashmap
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -21,8 +20,8 @@ func longestPalindrome(s string) int {
 }
 
 func TestLongestPalindrome(t *testing.T) {
-	count := longestPalindrome("cbccacdcd")
-	fmt.Println(count)
+	//count := longestPalindrome("cbccacdcd")
+	//fmt.Println(5 % 2)
 	//var (
 	//	wg sync.WaitGroup
 	//)

@@ -31,4 +31,5 @@ func majorityElement01(nums []int) int {
 func TestMajorityElement(t *testing.T) {
 	fmt.Println(majorityElement01([]int{2, 2, 1, 1, 1, 2, 2}))
 	fmt.Println(majorityElement([]int{2, 2, 1, 1, 1, 2, 2}))
+	fmt.Println(majorityElement([]int{1, 2, 5, 9, 5, 9, 5, 5, 5}))
 }
