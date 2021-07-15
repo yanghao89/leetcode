@@ -7,7 +7,7 @@ import (
 )
 
 func TestMergeTwoLists(t *testing.T) {
-	res := MergeTwoLists(utils.CreateListNode([]int{1, 2, 2, 3, 3, 4, 5}), utils.CreateListNode([]int{6, 7, 8, 9, 10}))
+	res := MergeTwoLists(utils.CreateListNode([]int{1, 2, 2, 3, 3, 4, 5}, false), utils.CreateListNode([]int{6, 7, 8, 9, 10}, false))
 	next := res.Next
 	fmt.Println(res.Val)
 	for next.Next != nil {

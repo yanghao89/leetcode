@@ -28,7 +28,7 @@ func BenchmarkReverseList(b *testing.B) {
 		if num == -1 {
 			break
 		}
-		node := utils.CreateListNode(arrs[num])
+		node := utils.CreateListNode(arrs[num], false)
 		ReverseList(node)
 		//fmt.Sprintf("%d", num)
 		num--

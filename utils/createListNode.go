@@ -1,5 +1,7 @@
 package utils
 
+import "sort"
+
 type ListNode struct {
 	Val  int
 	Next *ListNode
@@ -10,11 +12,19 @@ type Node struct {
 	Children []*Node
 }
 
-func CreateListNode(arr []int) *ListNode {
+type Nodes struct {
+	Val       int
+	Neighbors []*Nodes
+}
+
+func CreateListNode(arr []int, isSort bool) *ListNode {
+	if isSort {
+		sort.Ints(arr)
+	}
 	node := &ListNode{Val: arr[0]}
 	tmp := node
-	for i := 0; i < len(arr[1:])+1; i++ {
-		ne := &ListNode{Val: arr[i]}
+	for _, v := range arr[1:] {
+		ne := &ListNode{Val: v}
 		tmp.Next = ne
 		tmp = ne
 	}

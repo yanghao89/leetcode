@@ -33,7 +33,7 @@ func addTwoNumbers(l1 *utils.ListNode, l2 *utils.ListNode) *utils.ListNode {
 }
 
 func TestAddTwoNumbers(t *testing.T) {
-	node := addTwoNumbers(utils.CreateListNode([]int{2, 4, 3}), utils.CreateListNode([]int{5, 6, 4}))
+	node := addTwoNumbers(utils.CreateListNode([]int{2, 4, 3}, false), utils.CreateListNode([]int{5, 6, 4}, false))
 	for ; node != nil; node = node.Next {
 		fmt.Println(node.Val)
 	}

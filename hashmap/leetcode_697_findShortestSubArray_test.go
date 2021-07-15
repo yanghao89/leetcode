@@ -26,10 +26,10 @@ func findShortestSubArray(nums []int) (ans int) {
 	return
 }
 func max(a, b int) int {
-	if a > b {
-		return a
+	if a < b {
+		return b
 	}
-	return b
+	return a
 }
 
 func TestFindShortestSubArray(t *testing.T) {

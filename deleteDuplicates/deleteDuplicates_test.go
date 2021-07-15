@@ -7,7 +7,7 @@ import (
 )
 
 func TestDeleteDuplicates(t *testing.T) {
-	node := utils.CreateListNode([]int{1, 1, 2, 3, 3})
+	node := utils.CreateListNode([]int{1, 1, 2, 3, 3}, false)
 	//for _,v := range node{
 	//	fmt.Println(v)
 	//}
